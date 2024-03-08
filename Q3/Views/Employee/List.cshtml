@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1 style="font-weight:lighter">List of employees</h1>
+<table id="emp">
+    <thead>
+        <tr>
+            <th width="600px">Name</th>
+            <th width="200px">Sex</th>
+            <th width="300px">Position</th>
+            <th width="100px">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in ViewBag.emp)
+        {
+            <tr>
+                <td>@e.Name</td>
+                <td>@e.Sex</td>
+                <td>@e.Position</td>
+                <td><a href="/Employee/Remove?id=@e.Id" style="text-decoration-line:none">Delete</a></td>
+            </tr>
+        }        
+    </tbody>
+</table>
